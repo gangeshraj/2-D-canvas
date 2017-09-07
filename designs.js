@@ -22,12 +22,13 @@ function makeGrid() {
                $("tr").html("");
                $("table").prepend(ch);
            });
-        const colorof=document.getElementById('colorPicker').value;
         //alert(colorof);
             $("#colorPicker").on("input", function(){
-                    alert("colorchanging");
+                    //alert("colorchanging");
+                    //const colorof=document.getElementById('colorPicker').value;
                         $("td").on("click",function(){
-                            alert(colorof);
+                            const colorof=document.getElementById('colorPicker').value;
+                            //alert(colorof);
                             console.log(this);
                             $(this).css("background-color",colorof);
                         });
