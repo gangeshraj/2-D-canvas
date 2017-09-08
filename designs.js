@@ -1,9 +1,4 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
 function makeGrid() {
-    //Your code goes here!
     $('#sizePicker').on("submit", function(evt) {
            let ch="";
                 evt.preventDefault();
@@ -14,24 +9,21 @@ function makeGrid() {
                     ch+="<tr>"
                     for(let j=0;j<widthof;j++)
                     {
-                            ch+="<td class='data'></td>"
+                            ch+="<td class='data'+i+j></td>"
+                            console.log('data'+i+j);
                     }
                     ch+="</tr>"
                }
-           //alert(ch);
                $("tr").html("");
                $("table").prepend(ch);
+               $("td").on("click",function hye(){
+                          const colorof=document.getElementById('colorPicker').value;
+                          alert(this);
+                          $(this).css("background-color",colorof);
+                      });
            });
-        //alert(colorof);
-            $("#colorPicker").on("input", function(){
-                    //alert("colorchanging");
-                    //const colorof=document.getElementById('colorPicker').value;
-                        $("td").on("click",function(){
-                            const colorof=document.getElementById('colorPicker').value;
-                            //alert(colorof);
-                            console.log(this);
-                            $(this).css("background-color",colorof);
-                        });
-               });
+            //$("#colorPicker").on("input", function(){
+
+            //});
     }
 makeGrid();
