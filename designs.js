@@ -46,4 +46,9 @@ function populate(){
             let coloring=Math.floor(Math.random()*222222);
             $(this).css("background-color",'#'+coloring);
        });
+
+    $("td").on("click",function hye(){
+        const colorof=document.getElementById('colorPicker').value;
+        $(this).css("background-color",colorof);
+    });
 }
